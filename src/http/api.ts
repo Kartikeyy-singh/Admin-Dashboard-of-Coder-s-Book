@@ -1,4 +1,5 @@
 import axios from 'axios';
+import useTokenStore from '@/store';
 
 const api = axios.create({
     // todo: move this value to env variable.
@@ -6,6 +7,14 @@ const api = axios.create({
     headers: {
         'Content-Type': 'application/json',
     },
+});
+
+api.interceptors.request.use((config) => {
+    const token = useTokenStore.getState().token;
+    if (token) {
+        config.headers.Authorization = `${token}`;
+    }
+    return config;
 });
 
 export const login = async (data: { email: string; password: string }) =>

@@ -3,7 +3,7 @@ import LoginPage from '@/pages/LoginPage.tsx';
 import HomePage from '@/pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardLayout from './layouts/DashboardLayout.tsx';
-import {BooksPage} from './pages/BooksPage.tsx';
+import BooksPage from './pages/BooksPage.tsx';
 import AuthLayout from './layouts/AuthLayout.tsx';
 import CreateBook from './pages/CreateBook.tsx';
 

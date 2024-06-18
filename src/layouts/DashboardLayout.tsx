@@ -29,9 +29,9 @@ import { Link, Navigate, NavLink, Outlet } from 'react-router-dom';
 const DashboardLayout = () => {
     const { token, setToken } = useTokenStore((state) => state);
 
-    // if (token === '') {
-    //     return <Navigate to={'/auth/login'} replace />;
-    // }
+    if (token === '') {
+        return <Navigate to={'/auth/login'} replace />;
+    }
 
     const logout = () => {
         console.log('Logging out!');
